@@ -1,1 +1,44 @@
-hello
+<div class="container">
+<h2>Search by Name:</h2>
+<%= form_tag("/", method: "get") do %>
+  <%= label_tag(:name, "Search for:") %>
+  <%= text_field_tag(:name) %>
+  <p class="waves-effect waves-light white-text btn indigo lighten-1"><%= submit_tag("Search") %></p>
+<% end %>
+<% if @pokedexes.any? %>
+<table class="table table-inverse">
+  <thead>
+    <tr class="bg-primary">
+      <th>#</th>
+      <th>Name</th>
+      <th>Base Health Point</th>
+      <th>Base Attack</th>
+      <th>Base Defence</th>
+      <th>Base Speed</th>
+      <th>Base Element Type</th>
+      <th colspan="2"><center>Action</center></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pokedexes.each do |pokedex| %>
+      <tr>
+        <th><%= pokedex.id %></th>
+        <td><%= link_to pokedex.name, pokedex %></td>
+        <td><%= pokedex.base_health_point %></td>
+        <td><%= pokedex.base_attack %></td>
+        <td><%= pokedex.base_defence %></td>
+        <td><%= pokedex.base_speed %></td>
+        <td><%= pokedex.element_type %></td>
+        <td><%= link_to 'Edit', edit_pokedex_path(pokedex), class: 'btn btn-default' %></td>
+        <td><center>
+          <%= button_to 'Destroy', pokedex,
+          method: :delete,
+          class: 'btn btn-danger',
+          data: { confirm: 'Are you sure?' } %>
+        </center></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  <% end %>
+</div>
