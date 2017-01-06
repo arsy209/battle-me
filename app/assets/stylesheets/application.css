@@ -24,3 +24,12 @@ nav {
 body {
   background: lightgreen;
 }
+
+.back {
+  background: white;
+  border-radius: 25px;
+}
+
+.button {
+  margin-top: 15px;
+}
