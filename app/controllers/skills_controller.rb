@@ -5,6 +5,12 @@ class SkillsController < ApplicationController
     navigation_add("Skill Index", "#")
 	end
 
+	def new
+		@skill = Skill.new
+		navigation_add("Skill Index", skills_path)
+		navigation_add("New Skill", "#")
+	end
+
 	def create
 		@skill = Skill.new(skill_params)
 		if @skill.valid?
@@ -32,7 +38,7 @@ class SkillsController < ApplicationController
 			render 'edit'
 		end
 	end
-	
+
 	def show
 		@skill = Skill.find(params[:id])
 		navigation_add("Skill Index", skills_path)
