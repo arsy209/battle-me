@@ -5,12 +5,6 @@ class SkillsController < ApplicationController
     navigation_add("Skill Index", "#")
 	end
 
-	def show
-		@skill = Skill.find(params[:id])
-		navigation_add("Skill Index", skills_path)
-		navigation_add("Skill Show", "#")
-	end
-
 	def create
 		@skill = Skill.new(skill_params)
 		if @skill.valid?
@@ -38,6 +32,12 @@ class SkillsController < ApplicationController
 			render 'edit'
 		end
 	end
+	
+	def show
+		@skill = Skill.find(params[:id])
+		navigation_add("Skill Index", skills_path)
+		navigation_add("Skill Show", "#")
+	end
 
 	def destroy
 		@skill = Skill.find(params[:id])
@@ -48,7 +48,7 @@ class SkillsController < ApplicationController
 	end
 
 	private
-	
+
 	def skill_params
 	params.require(:skill).permit(:name, :power, :max_pp, :element_type)
 	end
