@@ -15,15 +15,12 @@
  */
 
 nav {
-  margin: auto;
+  margin: fixed;
+  margin-bottom: 94px;
+  text-align: right;
+  /*text-align: left;*/
 }
- .logo {
-   margin-left: 240px;
-   padding: auto;
- }
 
-.search {
-  margin-top: 300px;
-  margin-left: 350px;
-  padding: auto;
+body {
+  background: lightgreen;
 }

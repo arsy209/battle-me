@@ -16,20 +16,21 @@
   </head>
 
   <body>
-    <div class="navbar navbar-default">
+    <div >
     <div class="container">
       <nav>
         <ul class="nav navbar-nav">
-          <li>  <a class="navbar-brand" href="/"><img src="/logo.png" alt="logo" width="120"></a></li>
+          <li><a class="navbar-brand" href="/"><img src="/logo.png" alt="logo" width="90"></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-
           <li><%= link_to 'Pokedex', pokedexes_path %></li>
           <li><%= link_to 'Skill', skills_path %></li>
         </ul>
       </nav>
     </div>
   </div>
+  <div class= "container">
     <%= yield %>
+  </div>
   </body>
 </html>
