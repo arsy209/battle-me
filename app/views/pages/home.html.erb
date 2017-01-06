@@ -3,7 +3,7 @@
 <%= form_tag("/", method: "get") do %>
   <%= label_tag(:name, "Search for:") %>
   <%= text_field_tag(:name) %>
-  <p class="waves-effect waves-light white-text btn indigo lighten-1"><%= submit_tag("Search") %></p>
+  <%= submit_tag("Search") %>
 <% end %>
 <% if @pokedexes.any? %>
 <table class="table table-inverse">
