@@ -1,24 +1,5 @@
-# README
+#Battle-me
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A pokemon based website where users can search all the pokemon, add a new,update,edit or delete a pokemon or skill.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+work in progress.
