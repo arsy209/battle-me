@@ -17,7 +17,7 @@ require 'csv'
 		sk.element_type = row['element_type']
 		sk.save
 	end
-	puts "There are now #{Skill.count} rows in the Skill Table."
+	puts "There are a total of #{Skill.count}'s in the Skill Table."
 
 	csv_pokedex = File.read(Rails.root.join('lib', 'seeds', 'list_pokedex.csv'))
 	csv = CSV.parse(csv_pokedex, headers: true)
@@ -33,4 +33,4 @@ require 'csv'
 		poke.save
 	end
 
-	puts "There are now #{Pokedex.count} rows in the Pokedex Table."
+	puts "There are a total of #{Pokedex.count} pokemon in the Pokedex Table."
