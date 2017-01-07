@@ -1,13 +1,12 @@
-<div class="col-sm-12">
-	<ul class="list-inline">
-		<li><%= button_to 'Heal', pokemon_heal_path(pokemon_id: @pokemon.id), class: 'btn btn-success' %></li>
-		<li><%= link_to 'Edit', edit_pokemon_path(@pokemon), class: 'btn btn-primary' %></li>
-		<li><%= button_to 'Delete', @pokemon, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %></li>
-	</ul>
-</div>
-
 <div class="col-sm-4">
 	<%= image_tag @pokedex.image_url, size: "200x200" %>
+  <div class="col-sm-12">
+  	<ul class="list-inline">
+  		<li><%= button_to 'Heal', pokemon_heal_path(pokemon_id: @pokemon.id), class: 'btn btn-success' %></li>
+  		<li><%= link_to 'Edit', edit_pokemon_path(@pokemon), class: 'btn btn-primary' %></li>
+  		<li><%= button_to 'Delete', @pokemon, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure?'} %></li>
+  	</ul>
+  </div>
 </div>
 
 <div class="col-sm-8">
@@ -50,9 +49,6 @@
 		</tr>
 	</table>
 </div>
-
-<br /><br />
-
 <div class="col-sm-12">
 <h2>Skills</h2>
 <table class="table table-inverse well">
@@ -77,12 +73,10 @@
 		<% end %>
 	</tbody>
 </table>
-
 	<%= form_for([@pokemon, @pokemon_skill]) do |f| %>
 		<%= f.label 'Skill', for: 'skill_id' %>
 		<%= f.select(:skill_id, @list_names_ids, {}, class: 'form-control form-group') %>
 		<%= (content_tag(:div, @pokemon_skill.errors.full_messages.to_sentence , class: 'alert alert-danger', role: 'alert')) unless @pokemon_skill.errors.empty? %>
 		<%= f.submit 'Add a skill', class: 'btn btn-info' %>
 	<% end %>
-
 </div>
