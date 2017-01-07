@@ -15,15 +15,22 @@
  */
 
 nav {
-  margin-bottom: 4px;
+  margin: fixed;
+  margin-bottom: 94px;
+  text-align: right;
+  /*text-align: left;*/
 }
- .logo {
-   margin-left: 40px;
-   padding: auto;
- }
 
-.search {
-  margin-top: 300px;
-  margin-left: 180px;
-  padding: auto;
+body {
+  background: lightgreen;
+}
+
+.back {
+  background: white;
+  border-radius: 25px;
+
+}
+
+.button {
+  margin-top: 15px;
 }

@@ -1,7 +1,7 @@
 class SkillsController < ApplicationController
 
 	def index
-		@skills = Skill.all
+		@skills = Skill.paginate(page: params[:page], per_page: 70)
     navigation_add("Skill Index", "#")
 	end
 
