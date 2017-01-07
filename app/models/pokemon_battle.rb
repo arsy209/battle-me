@@ -21,14 +21,14 @@ class PokemonBattle < ApplicationRecord
 	validate :check_pokemon1_and_pokemon2
 	validate :check_pokemon_hp_zero
 
-	def pokemon_hp_zero
+	def check_pokemon_hp_zero
 		@list_pokemons = []
-		@pokemons = Pokemon.all
-		@all_pokemon.each {|pokemon| @list_pokemons << pokemon if current_health_point > 0}
-			if self.state == "Ongoing"
-				errors.add(:pokemon1_id, "Cannot add Pokemon with 0 HP")
+		Pokemon.all.each { |poke| @list_pokemons << poke if poke.current_health_point > 0 }
+		if self.state == "Ongoing"
+			if @list_pokemons.exclude? pokemon1
+				errors.add(:pokemon1_id, "Cannot add Pokemon with empty HP.")
 			elsif @list_pokemons.exclude? pokemon2
-				errors.add(:pokemon2_id, "Cannot add Pokemon with 0 HP")
+				errors.add(:pokemon2_id, "Cannot add Pokemon with empty HP.")
 			end
 		end
 	end
