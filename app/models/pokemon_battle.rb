@@ -21,4 +21,38 @@ class PokemonBattle < ApplicationRecord
 	validate :check_pokemon1_and_pokemon2
 	validate :check_pokemon_hp_zero
 
+	def pokemon_hp_zero
+		@list_pokemons = []
+		@pokemons = Pokemon.all
+		@all_pokemon.each {|pokemon| @list_pokemons << pokemon if current_health_point > 0}
+			if self.state == "Ongoing"
+				errors.add(:pokemon1_id, "Cannot add Pokemon with 0 HP")
+			elsif @list_pokemons.exclude? pokemon2
+				errors.add(:pokemon2_id, "Cannot add Pokemon with 0 HP")
+			end
+		end
+	end
+
+	def check_pokemon1_and_pokemon2
+		if self.pokemon2_id == self.pokemon1_id
+			errors.add(:pokemon1_id, "Cannot be the same pokemon.")
+			errors.add(:pokemon2_id, "Cannot be the same pokemon.")
+		end
+	end
+
+	def pokemon1_name
+		pokemon1.name
+	end
+
+	def pokemon2_name
+		pokemon2.name
+	end
+
+	def pokemon1_image
+		pokemon1.pokedex_image
+	end
+
+	def pokemon2_image
+		pokemon2.pokedex_image
+	end
 end
