@@ -35,9 +35,13 @@ body {
   margin-top: 15px;
 }
 
+#battle-log {
+margin-top: 600px;
+
+}
 #versus img{
-   top:75%;
-   left:40%;
+   top:175px;
+   left:42%;
    z-index: 3;
    position: absolute;
 }
