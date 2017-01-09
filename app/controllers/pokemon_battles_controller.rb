@@ -69,10 +69,7 @@ class PokemonBattlesController < ApplicationController
 	private
 
 	def manual_attack
-		pokemon_battle_engine = PokemonBattleEngine.new(
-			pokemon_battle: @pokemon_battle,
-			attacker_id: params[:attacker_id],
-			skill_id: params[:skill_id])
+		pokemon_battle_engine = PokemonBattleEngine.new(pokemon_battle: @pokemon_battle,attacker_id: params[:attacker_id],	skill_id: params[:skill_id])
 		if pokemon_battle_engine.list_attack_validations?
 			pokemon_battle_engine.attack
 			pokemon_battle_engine.save_attack
@@ -104,9 +101,7 @@ class PokemonBattlesController < ApplicationController
 	end
 
 	def manual_surrender
-		pokemon_battle_engine = PokemonBattleEngine.new(
-			pokemon_battle: @pokemon_battle,
-			attacker_id: params[:surrender_id])
+		pokemon_battle_engine = PokemonBattleEngine.new(pokemon_battle: @pokemon_battle,attacker_id: params[:surrender_id])
 		if pokemon_battle_engine.list_surrender_validations?
 			pokemon_battle_engine.surrender
 			pokemon_battle_engine.save_surrender

@@ -10,6 +10,6 @@ class PokemonBattleLog < ApplicationRecord
 	end
 
 	def defender_name
-		Pokemen.find(self.defender_id).name
+		Pokemon.find(self.defender_id).name
 	end
 end
