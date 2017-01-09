@@ -1,5 +1,9 @@
 .detail-show {
-
   margin-top: 55%;
+}
 
+.skill-form {
+  background: white;
+  padding:20px;
+  border-radius: 30px;
 }
