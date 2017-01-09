@@ -1,14 +1,14 @@
 <div class="col-sm-12">
-	<%= link_to '+ New Pokemon Battle', new_pokemon_battle_path, class: "btn btn-primary"%>
+	<%= link_to 'New Pokemon Battle', new_pokemon_battle_path, class: "btn btn-primary"%>
 	<br /><br />
-	<table class="table table-bordered">
+	<!-- <table class="table table-bordered">
 		<thead>
 		  <tr class="bg-primary">
 		    <th width="50%">Pokemon 1</th>
 		    <th width="50%"  style="text-align: right;">Pokemon 2</th>
 		  </tr>
 		</thead>
-	</table>
+	</table> -->
 
 	<% if !@pokemon_battles.nil? %>
 		<% idx = 0 %>
@@ -35,10 +35,10 @@
 				</tr>
 				<tr class="bg-default">
 					<td width="40%" class="red">
-						<%= image_tag pokemon_battle.pokemon1_image, size: "350x350" %><br />
+						<%= image_tag pokemon_battle.pokemon1_image, size: "250x250" %><br />
 						<h1><kbd><%= pokemon_battle.pokemon1_name %></kbd></h1>
 					</td>
-				  <td style="text-align: right;"  width="40%"  class="blue"><%= image_tag pokemon_battle.pokemon2_image, size: "350x350" %><br /><h1><kbd><%= pokemon_battle.pokemon2_name %></kbd></h1>
+				  <td style="text-align: right;"  width="40%"  class="blue"><%= image_tag pokemon_battle.pokemon2_image, size: "250x250" %><br /><h1><kbd><%= pokemon_battle.pokemon2_name %></kbd></h1>
 				  </td>
 				</tr>
 			</table>
