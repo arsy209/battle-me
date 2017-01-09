@@ -63,8 +63,8 @@ class PokemonsController < ApplicationController
   end
 
   def heal
-    @pokemon = Pokemon.find(params[:pokemon_id])
     flag = true
+    @pokemon = Pokemon.find(params[:pokemon_id])
     @pokemon.pokemon_battles.each do |pokemon_battle|
     flag = false if pokemon_battle.state == "Ongoing"
     end
@@ -77,7 +77,8 @@ class PokemonsController < ApplicationController
       @pokemon.save
       redirect_to @pokemon
     else
-      flash[:danger] = "Cannot heal"
+
+      flash[:danger] = "Pokemon is in battle currently, can not heal till it is done!"
       @pokemons = Pokemon.all
       render 'index'
     end
