@@ -16,3 +16,10 @@
   /*padding-right: 750px;*/
   border-radius: 30px;
 }
+
+.pokemon-back {
+
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
