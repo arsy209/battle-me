@@ -7,3 +7,12 @@
   padding:20px;
   border-radius: 30px;
 }
+
+.new-pokemon {
+  background: white;
+  width: 240px;
+  margin-left: 40%;
+  padding:40px;
+  /*padding-right: 750px;*/
+  border-radius: 30px;
+}
