@@ -97,45 +97,33 @@ class PokemonsController < ApplicationController
       end
       pokemon.save
     else
-    cant_be_healed << pokemon.name
+      cant_be_healed << pokemon.name
     end
-    end
+  end
     flash[:danger] = "#{cant_be_healed.to_sentence} can't be healed" if cant_be_healed.count > 0
     @pokemons = Pokemon.all
     render 'index'
   end
 
   private
+
   def new_pokemon_params
-  params.require(:pokemon).permit(
-  :pokedex_id,
-  :name
-  )
+    params.require(:pokemon).permit(:pokedex_id,:name)
   end
 
   def edit_pokemon_params
-  params.require(:pokemon).permit(
-  :pokedex_id,
-  :name,
-  :level,
-  :max_health_point,
-  :current_health_point,
-  :attack,
-  :defence,
-  :speed,
-  :current_experience
-  )
+    params.require(:pokemon).permit(:pokedex_id,:name,:level,:max_health_point,:current_health_point,:attack,:defence,:speed,:current_experience)
   end
 
   def set_pokemon_attr
-  pokedex = Pokedex.find(@pokemon.pokedex_id)
-  @pokemon.level = 1
-  @pokemon.max_health_point = pokedex.base_health_point
-  @pokemon.current_health_point = pokedex.base_health_point
-  @pokemon.attack = pokedex.base_attack
-  @pokemon.defence = pokedex.base_defence
-  @pokemon.speed = pokedex.base_speed
-  @pokemon.current_experience = 0
+    pokedex = Pokedex.find(@pokemon.pokedex_id)
+    @pokemon.level = 1
+    @pokemon.max_health_point = pokedex.base_health_point
+    @pokemon.current_health_point = pokedex.base_health_point
+    @pokemon.attack = pokedex.base_attack
+    @pokemon.defence = pokedex.base_defence
+    @pokemon.speed = pokedex.base_speed
+    @pokemon.current_experience = 0
   end
 
 end
