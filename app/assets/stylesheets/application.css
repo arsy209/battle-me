@@ -60,7 +60,7 @@ margin-top: 600px;
 #pokemon2 table{
    text-align: center;
    background-color: #d9534f;
-   color: #fff;
+   color: white;
 }
 #pokemon1{
    border-radius: 25px 0 0 25px;
@@ -71,7 +71,7 @@ margin-top: 600px;
 #pokemon1 table{
    text-align: center;
    background-color: #428bca;
-   color: #fff;
+   color: white;
 }
 .red {
    border-radius: 5px 5px 5px 5px;
