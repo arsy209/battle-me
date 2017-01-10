@@ -1,36 +1,36 @@
 <div class="container show-pokemon">
-	<div>
-		<%= image_tag @pokedex.image_url, size: "250x250" %>
-	</div>
-	<div class="col-sm-9">
+	<div class="col-sm-3">
 	<table class="table table-inverse back">
 		<tr>
+		<td><%= image_tag @pokedex.image_url, size: "250x250" %></td>
+		</tr>
+		<tr>
 			<td class="bg-primary">#</td>
-			<td><%= @pokedex.id %></td>
+			<td class="bg-danger"><%= @pokedex.id %></td>
 		</tr>
 		<tr>
 			<td class="bg-primary">Name</td>
-			<td><%= @pokedex.name %></td>
+			<td class="bg-danger"><%= @pokedex.name %></td>
 		</tr>
 		<tr>
 			<td class="bg-primary">Health Point</td>
-			<td><%= @pokedex.base_health_point %></td>
+			<td class="bg-danger"><%= @pokedex.base_health_point %></td>
 		</tr>
 		<tr>
 			<td class="bg-primary">Attack</td>
-			<td><%= @pokedex.base_attack %></td>
+			<td class="bg-danger"><%= @pokedex.base_attack %></td>
 		</tr>
 		<tr>
 			<td class="bg-primary">Defence</td>
-			<td><%= @pokedex.base_defence %></td>
+			<td class="bg-danger"><%= @pokedex.base_defence %></td>
 		</tr>
 		<tr>
 			<td class="bg-primary">Speed</td>
-			<td><%= @pokedex.base_speed %></td>
+			<td class="bg-danger"><%= @pokedex.base_speed %></td>
 		</tr>
 		<tr>
 			<td class="bg-primary">Element Type</td>
-			<td><%= @pokedex.element_type %></td>
+			<td class="bg-danger"><%= @pokedex.element_type %></td>
 		</tr>
 	</table>
 	</div>

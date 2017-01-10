@@ -1,7 +1,7 @@
 <div class="col-sm-12" id="versus">
 	<%= image_tag "vs.jpg", size: "150x150"%>
+		<h3 class="turn"><kbd><%= "#{@pokemon_battle.current_turn}" %></kbd></h3>
 	<%= (content_tag(:div, @pokemon_battle.errors.full_messages.to_sentence , class: 'alert alert-danger', role: 'alert')) unless @pokemon_battle.errors.empty? %>
-	<h1 class="turn"><kbd><%= "#{@pokemon_battle.current_turn}" %></kbd></h1>
 </div>
 <div class="col-sm-6" id="pokemon1">
 	<h1><% if @pokemon_battle.pokemon_winner_id == @pokemon1.id and @pokemon_battle.state == "Finished" %>
@@ -9,7 +9,7 @@
 	<% elsif @pokemon_battle.state == "Finished" %>
 		<kbd><%= "#{@pokemon1.name} has lost." %></kbd>
 	<% end %></h1>
-	<pre>Pokemon 1</pre>
+		<pre><h2><%=@pokemon1.name%></h2></pre>
 	<%= image_tag @pokemon1.pokedex_image, size: "300x300" %>
 	<br /><br />
 	<table class="table table-bordered">
@@ -67,7 +67,7 @@
 		<kbd><%= "#{@pokemon2.name} has lost." %></kbd>
 	<% end %>
 	</h1>
-	<pre>Pokemon 2</pre>
+	<pre><h2><%=@pokemon2.name%></h2></pre>
 	<%= image_tag @pokemon2.pokedex_image, size: "300x300" %>
 	<br /><br />
 	<table class="table table-bordered">
