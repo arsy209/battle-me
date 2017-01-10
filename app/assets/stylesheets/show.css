@@ -10,9 +10,17 @@
 
 .new-pokemon {
   background: white;
-  width: 240px;
-  margin-left: 40%;
-  padding:40px;
-  /*padding-right: 750px;*/
+  width: 250px;
+  margin-left: 32%;
+  padding:25px;
   border-radius: 30px;
+  text-align: center;
+  margin-top: 10px;
+
+}
+
+.pokemon-back {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
 }

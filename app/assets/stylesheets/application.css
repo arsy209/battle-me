@@ -17,8 +17,6 @@
 nav {
   margin: fixed;
   margin-bottom: 94px;
-  text-align: right;
-  /*text-align: left;*/
 }
 
 body {
@@ -28,7 +26,7 @@ body {
 .back {
   background: white;
   border-radius: 25px;
-
+  padding: 10px;
 }
 
 .button {
