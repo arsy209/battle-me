@@ -36,9 +36,8 @@ class PokedexesController < ApplicationController
 
   def destroy
     @pokedex = Pokedex.find(params[:id])
-    name = @pokedex.name
     @pokedex.destroy
-    flash[:notice] = "#{name} was destroyed."
+    flash[:notice] = "#{@pokedex.name} was destroyed."
     redirect_to pokedexes_path
   end
 
