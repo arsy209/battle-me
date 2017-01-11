@@ -13,8 +13,7 @@ class PokemonSkillsController < ApplicationController
 		@pokemon_skill = PokemonSkill.new(pokemon_skill_params)
 		set_pokemon_skill_attr
 		@pokemon_skill.pokemon_id = @pokemon.id
-		if @pokemon_skill.valid?
-			@pokemon_skill.save
+		if @pokemon_skill.save
 			redirect_to @pokemon
 		else
 			@pokemon = @pokemon_skill.pokemon
@@ -34,9 +33,7 @@ class PokemonSkillsController < ApplicationController
 
 	private
 	def pokemon_skill_params
-		params.require(:pokemon_skill).permit(
-			:skill_id
-			)
+		params.require(:pokemon_skill).permit(:skill_id)
 	end
 
 	def set_pokemon_skill_attr
@@ -47,5 +44,4 @@ class PokemonSkillsController < ApplicationController
 	def get_pokemon
 		@pokemon = Pokemon.find(params[:pokemon_id])
 	end
-
 end

@@ -2,22 +2,18 @@ class PokemonsController < ApplicationController
 
   def index
     @pokemons = Pokemon.all
-    navigation_add("Pokemon Index", "#")
   end
 
   def new
     @pokemon = Pokemon.new
     list_pokedexes = Pokedex.all
     @list_names_ids = list_pokedexes.map { |poke| [poke.name, poke.id]}
-    navigation_add("Pokemon Index", pokemons_path)
-    navigation_add("Pokemon New", "#")
   end
 
   def create
     @pokemon = Pokemon.new(new_pokemon_params)
     set_pokemon_attr
-    if @pokemon.valid?
-      @pokemon.save
+    if @pokemon.save
       redirect_to pokemon_path @pokemon
     else
       list_pokedexes = Pokedex.all
@@ -34,16 +30,11 @@ class PokemonsController < ApplicationController
     @pokemon_skill.pokemon_id = @pokemon.id
     list_skill = Skill.all
     @list_names_ids = list_skill.map { |sk| [sk.name, sk.id] }
-    navigation_add("Pokemon Index", pokemons_path)
-    navigation_add("Pokemon Show", "#")
   end
 
   def edit
     @pokemon = Pokemon.find(params[:id])
     @pokedex = Pokedex.find(@pokemon.pokedex_id)
-    navigation_add("Pokemon Index", pokemons_path)
-    navigation_add("Pokemon Show", pokemon_path(@pokemon))
-    navigation_add("Pokemon Edit", "#")
   end
 
   def update
