@@ -1,15 +1,5 @@
 <div class="col-sm-12">
 	<%= link_to 'New Pokemon Battle', new_pokemon_battle_path, class: "btn btn-primary"%>
-	<br /><br />
-	<!-- <table class="table table-bordered">
-		<thead>
-		  <tr class="bg-primary">
-		    <th width="50%">Pokemon 1</th>
-		    <th width="50%"  style="text-align: right;">Pokemon 2</th>
-		  </tr>
-		</thead>
-	</table> -->
-
 	<% if !@pokemon_battles.nil? %>
 		<% idx = 0 %>
 		<% pokemon_battles = @pokemon_battles.sort { |a,b| b <=> a} %>
