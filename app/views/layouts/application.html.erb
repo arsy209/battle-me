@@ -13,18 +13,36 @@
   <body>
     <div >
     <div class="container">
+      <div class="container">
       <nav>
-        <ul class="nav navbar-nav">
-          <li><a class="navbar-brand" href="/"><img src="/logo.png" alt="logo" width="90"></a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Pokemon Team', pokemons_path %></li>
-          <li><%= link_to 'Battle Now', pokemon_battles_path %></li>
+      <div class="navigation">
+        <ul>
+          <li><%= link_to 'Home', root_path %></li>
           <li><%= link_to 'Pokedex', pokedexes_path %></li>
           <li><%= link_to 'Skill Set', skills_path %></li>
+          <li><%= link_to 'Pokemon Team', pokemons_path %></li>
+          <li><%= link_to 'Battle Now', pokemon_battles_path %></li>
         </ul>
-      </nav>
-    </div>
+      </div>
+      <div class="nav_bg">
+        <div class="nav_bar">
+	   	<span class="expand ">
+			<span class="plus">
+				<a href="#">
+					<img src="https://lh6.ggpht.com/YphYdqVDuLK4ZY-tCpdCdl3ZbES-hXfozgfamNQcYXmLZKLTA86Xe_2bhOCjc097fCA=w300"/ width="30" alt="plus">
+				</a>
+			</span>
+		 <span class="minus">
+				<a href="#">
+					<img src="http://www.opajaap.nl/wordpress/wp-content/uploads/wppa/thumbs/3483.png?ver=9"  width="50"/ alt="minus">
+				</a>
+			</span>
+		</span>
+      </div>
+	  </div>
+  </nav>
+  </div>
+  </div>
   </div>
   <div class= "container">
     <%= yield %>
