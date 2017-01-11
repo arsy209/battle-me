@@ -1,6 +1,5 @@
 <div class="col-sm-12" id="versus">
 	<%= image_tag "vs.jpg", size: "150x150"%>
-		<h3 class="turn"><kbd><%= "#{@pokemon_battle.current_turn}" %></kbd></h3>
 	<%= (content_tag(:div, @pokemon_battle.errors.full_messages.to_sentence , class: 'alert    alert-danger', role: 'alert')) unless @pokemon_battle.errors.empty? %>
 </div>
 <div class="col-sm-6" id="pokemon1">

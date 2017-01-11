@@ -1,9 +1,7 @@
 <div class="container show-pokemon">
 	<div class="col-sm-3">
+		<%= image_tag @pokedex.image_url, size: "250x250" %>
 	<table class="table table-inverse back">
-		<tr>
-		<td><%= image_tag @pokedex.image_url, size: "250x250" %></td>
-		</tr>
 		<tr>
 			<td class="bg-primary">#</td>
 			<td class="bg-danger"><%= @pokedex.id %></td>

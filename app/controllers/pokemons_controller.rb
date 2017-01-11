@@ -14,7 +14,7 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.new(new_pokemon_params)
     set_pokemon_attr
     if @pokemon.save
-      redirect_to pokemon_path @pokemon
+      redirect_to pokemons_path
     else
       list_pokedexes = Pokedex.all
       @list_names_ids = list_pokedexes.map { |poke| [poke.name, poke.id]}
