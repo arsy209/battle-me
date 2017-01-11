@@ -13,3 +13,13 @@
   margin-right: 90px;
 
 }
+
+nav {
+  margin: fixed;
+  margin-bottom: 94px;
+
+}
+
+body {
+  background: lightgreen;
+}
