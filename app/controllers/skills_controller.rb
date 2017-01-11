@@ -2,19 +2,15 @@ class SkillsController < ApplicationController
 
 	def index
 		@skills = Skill.paginate(page: params[:page], per_page: 70)
-    navigation_add("Skill Index", "#")
 	end
 
 	def new
 		@skill = Skill.new
-		navigation_add("Skill Index", skills_path)
-		navigation_add("New Skill", "#")
 	end
 
 	def create
 		@skill = Skill.new(skill_params)
-		if @skill.valid?
-			@skill.save
+		if @skill.save
 			redirect_to @skill
 		else
 			render 'new'
@@ -23,16 +19,12 @@ class SkillsController < ApplicationController
 
 	def edit
 		@skill = Skill.find(params[:id])
-		navigation_add("Skill Index", skills_path)
-		navigation_add("Skill Show", @skill)
-		navigation_add("Edit Skill", "#")
 	end
 
 	def update
 		@skill = Skill.find(params[:id])
 		@skill.update(skill_params)
-		if @skill.valid?
-			@skill.save
+		if @skill.save
 			redirect_to @skill
 		else
 			render 'edit'
@@ -41,8 +33,6 @@ class SkillsController < ApplicationController
 
 	def show
 		@skill = Skill.find(params[:id])
-		navigation_add("Skill Index", skills_path)
-		navigation_add("Skill Show", "#")
 	end
 
 	def destroy

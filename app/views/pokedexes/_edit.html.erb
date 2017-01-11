@@ -1,4 +1,4 @@
-<div class="new-pokemon ">
+<div class="new-pokemon">
   <h3>Edit <%=@pokedex.name.capitalize%></h3>
   <%= form_for(@pokedex) do |f| %>
     <%= f.label 'Name', for: 'name' %>
@@ -30,7 +30,6 @@
     <%= f.select :element_type, Skill::ELEMENT, {}, {class: ' form-group'} %>
 
     <%= (content_tag(:div, @pokedex.errors.full_messages_for(:element_type).to_sentence , class: 'alert alert-danger', role: 'alert')) if @pokedex.errors.include?(:element_type) %>
-
 
     <%= f.text_field :image_url, placeholder: 'Image URL', class: ' form-group' %>
 

@@ -7,9 +7,20 @@
   margin-top: 300px;
   margin-left: 350px;
   padding: auto;
+  margin-bottom: 10px;
 }
 
 .information {
   margin-right: 90px;
 
+}
+
+nav {
+  margin: fixed;
+  margin-bottom: 94px;
+
+}
+
+body {
+  background: lightgreen;
 }

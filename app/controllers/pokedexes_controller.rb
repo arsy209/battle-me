@@ -1,18 +1,16 @@
 class PokedexesController < ApplicationController
+
 	def index
 		@pokedexes = Pokedex.paginate(page: params[:page], per_page: 50)
 	end
 
   def new
     @pokedex = Pokedex.new
-    navigation_add("Pokedex Index", "#")
-    navigation_add("Pokedex Index", pokedexes_path)
   end
 
   def create
     @pokedex = Pokedex.new(pokedex_params)
-    if @pokedex.valid?
-      @pokedex.save
+    if @pokedex.save
       redirect_to pokedex_path(@pokedex)
     else
       render 'new'
@@ -21,8 +19,6 @@ class PokedexesController < ApplicationController
 
   def edit
     @pokedex = Pokedex.find(params[:id])
-    navigation_add("Pokedex Index", pokedexes_path)
-    navigation_add("Edit Pokedex", "#")
   end
 
   def update
@@ -36,15 +32,12 @@ class PokedexesController < ApplicationController
 
   def show
     @pokedex = Pokedex.find(params[:id])
-    navigation_add("Pokedex Index", pokedexes_path)
-    navigation_add("Pokedex Show", "#")
   end
 
   def destroy
     @pokedex = Pokedex.find(params[:id])
-    name = @pokedex.name
     @pokedex.destroy
-    flash[:notice] = "#{name} was destroyed."
+    flash[:notice] = "#{@pokedex.name} was destroyed."
     redirect_to pokedexes_path
   end
 
