@@ -3,10 +3,11 @@
     <h2> <a class="navbar-brand"><img src="/logo2.png" alt="logo" width="520"></a></h2>
   </div>
   <div class="search">
-    <h4>Search Pokemon</h4>
+    <h3>Search Pokemon By Element Type</h3>
       <%= form_tag("/", method: "get") do %>
-      <%= label_tag(:name, "Pokemon Name:") %>
-      <%= text_field_tag(:name) %>
+      <%= label_tag(:element_type, "Element Type:") %>
+      <!-- <%= text_field_tag(:name) %> -->
+      <%= text_field_tag(:element_type) %>
       <%= submit_tag("Search") %>
     <% end %>
   </div>
@@ -39,5 +40,7 @@
         </tbody>
       </table>
     </div>
+    <%else%>
+    <h1 id = "valid">Enter A Valid Element Type!</h1>
   <% end %>
 </div>
