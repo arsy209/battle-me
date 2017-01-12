@@ -1,5 +1,7 @@
 <div class="col-sm-12">
-	<%= link_to 'New Pokemon Battle', new_pokemon_battle_path, class: "btn btn-primary"%>
+	<ul class="list-inline">
+		<li><%= link_to 'New Pokemon Battle', new_pokemon_battle_path, class: "btn btn-warning"%></li>
+	</ul>
 	<% if !@pokemon_battles.nil? %>
 		<% idx = 0 %>
 		<% pokemon_battles = @pokemon_battles.sort { |a,b| b <=> a} %>
