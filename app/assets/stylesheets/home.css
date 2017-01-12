@@ -1,5 +1,5 @@
 .logo {
-  margin-left: 240px;
+  margin-left: 260px;
   padding: auto;
 }
 
@@ -16,10 +16,11 @@
 }
 
 body {
-  background: #54D1FE;
+  background: #02ACE9  ;
+  color: black;
 }
 
 
 #valid {
-  margin-left: 300px;
+  margin-left: 420px;
 }
