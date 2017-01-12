@@ -68,7 +68,7 @@ class PokemonBattleAiEngine
 	end
 
 	def validate_battle_type?
-		if @pokemon_battle.battle_type == "Me vs AI"
+		if @pokemon_battle.battle_type == "Me vs Comp"
 			true
 		else
 			false

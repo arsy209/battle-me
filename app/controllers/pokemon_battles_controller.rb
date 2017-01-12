@@ -45,7 +45,7 @@ class PokemonBattlesController < ApplicationController
 		@pokemon_battle = PokemonBattle.find(params[:pokemon_battle_id])
 		if @pokemon_battle.battle_type == "Me vs Me"
 			manual_attack
-		elsif @pokemon_battle.battle_type == "Me vs AI"
+		elsif @pokemon_battle.battle_type == "Me vs Comp"
 			ai_attack
 		end
 	end

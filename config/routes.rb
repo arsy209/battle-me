@@ -12,5 +12,5 @@ Rails.application.routes.draw do
     post 'attack'
     post 'surrender'
   end
-  root 'pages#home'
+  root 'home#index'
 end

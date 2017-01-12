@@ -89,7 +89,7 @@ nav {
   content: '';
 }
 .navigation {
-  background: #fff;
+  background: #BAE9FF;
   width: 200px;
   height: 100%;
   display: block;
@@ -120,8 +120,8 @@ nav {
   position: fixed;
   top: 0;
   left: 0px;
-  background: #1290c6 !important;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  background:#008CBE !important;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.26);
   padding: 12px 0 0 10px;
   z-index:2;
 }
@@ -148,7 +148,7 @@ nav {
 }
 
 .navigation li:hover a {
-  background: #337ab7;
+  background: #0179B2;
   color: #fff !important;
 }
 
@@ -169,7 +169,7 @@ nav {
 }
 
 .opacity {
- background: rgba(0,0,0,0.7);
+ background: #33A4DA;
 
   position: fixed;
   top: 0;
