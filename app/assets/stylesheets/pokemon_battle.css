@@ -2,6 +2,12 @@
   margin-top: 15px;
 }
 
+#vs {
+  /*margin-left: 30px;*/
+  display: block;
+text-align: center;
+}
+
 #battle-log {
 margin-top: 600px;
 
