@@ -7,4 +7,7 @@ class HomeController < ApplicationController
   def show
     @pokedexes = Pokedex.find(params[:id])
   end
+
+  def about
+  end
 end
