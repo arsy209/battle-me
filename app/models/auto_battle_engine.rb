@@ -1,4 +1,4 @@
-class PokemonBattleAutoEngine
+class AutoBattleEngine
 	def initialize(pokemon_battle: )
 			@pokemon_battle = pokemon_battle
 			@pokemon1 = @pokemon_battle.pokemon1
@@ -39,9 +39,20 @@ class PokemonBattleAutoEngine
 		skill = pokemon_attacker.pokemon_skills[pick_number] unless pick_number == nil
 
 		if skill.nil?
+<<<<<<< HEAD:app/models/auto_battle_engine.rb
+			pokemon_battle_engine = PokemonBattleEngine.new(
+				pokemon_battle: @pokemon_battle,
+				attacker_id: pokemon_attacker.id)
+		else
+			pokemon_battle_engine = PokemonBattleEngine.new(
+				pokemon_battle: @pokemon_battle,
+				attacker_id: pokemon_attacker.id,
+				skill_id: skill.id)
+=======
 			pokemon_battle_engine = PokemonBattleEngine.new(pokemon_battle: @pokemon_battle,attacker_id: pokemon_attacker.id)
 		else
 			pokemon_battle_engine = PokemonBattleEngine.new(pokemon_battle: @pokemon_battle,attacker_id: pokemon_attacker.id,skill_id: skill.id)
+>>>>>>> master:app/models/pokemon_battle_auto_engine.rb
 		end
 
 		if pokemon_battle_engine.list_attack_validations?
@@ -92,4 +103,8 @@ class PokemonBattleAutoEngine
 			false
 		end
 	end
+<<<<<<< HEAD:app/models/auto_battle_engine.rb
+
+=======
+>>>>>>> master:app/models/pokemon_battle_auto_engine.rb
 end

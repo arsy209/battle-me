@@ -1,4 +1,4 @@
-class PokemonBattleAiEngine
+class CompBattleEngine
 	def initialize(pokemon_battle:)
 		@pokemon_battle = pokemon_battle
 		@player = @pokemon_battle.pokemon1
