@@ -52,7 +52,7 @@ class PokemonBattlesController < ApplicationController
 
 	def auto_battle
 		@pokemon_battle = PokemonBattle.find(params[:pokemon_battle_id])
-		pokemon_battle_auto_engine = PokemonBattleAutoEngine.new(pokemon_battle: @pokemon_battle)
+		pokemon_battle_auto_engine = AutoBattleEngine.new(pokemon_battle: @pokemon_battle)
 		pokemon_battle_auto_engine.begin_auto_battle
 		redirect_to @pokemon_battle
 	end
@@ -81,7 +81,7 @@ class PokemonBattlesController < ApplicationController
 		if pokemon_battle_engine.list_attack_validations?
 			pokemon_battle_engine.attack
 			pokemon_battle_engine.save_attack
-			pokemon_battle_ai_engine = PokemonBattleAiEngine.new(pokemon_battle: @pokemon_battle)
+			pokemon_battle_ai_engine = CompBattleEngine.new(pokemon_battle: @pokemon_battle)
 			pokemon_battle_ai_engine.begin_ai_battle
 			redirect_to @pokemon_battle
 		else

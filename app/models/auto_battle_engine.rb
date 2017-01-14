@@ -1,4 +1,4 @@
-class PokemonBattleAutoEngine
+class AutoBattleEngine
 	def initialize(pokemon_battle: )
 			@pokemon_battle = pokemon_battle
 			@pokemon1 = @pokemon_battle.pokemon1
@@ -13,7 +13,7 @@ class PokemonBattleAutoEngine
 
 		result.all?
 	end
-	
+
 	def begin_auto_battle
 		if start_auto_battle?
 			flag = true
@@ -45,7 +45,7 @@ class PokemonBattleAutoEngine
 			pokemon_battle_engine = PokemonBattleEngine.new(
 				pokemon_battle: @pokemon_battle,
 				attacker_id: pokemon_attacker.id)
-		else	
+		else
 			pokemon_battle_engine = PokemonBattleEngine.new(
 				pokemon_battle: @pokemon_battle,
 				attacker_id: pokemon_attacker.id,
@@ -74,7 +74,7 @@ class PokemonBattleAutoEngine
 			flag = true
 		else
 			@pokemon_battle.errors.add(:state, "Cannot act at this state.")
-			flag = false		
+			flag = false
 		end
 	end
 
