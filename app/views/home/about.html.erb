@@ -1,0 +1,18 @@
+<div class="back">
+    <h1>About Battle-Me</h1>
+    <p>A Pokemon game where users can search the database for Pokemon by element type. New Pokemon can also be added to the pokedex, they can also be edited and deleted. Users can also view the different types of skills and have the same option of adding new, editing or deleting skills. Users can then also add their pokemon to a new list where they can battle.</p>
+  <h4>How to Play:</h4>
+  <ol>
+    <li>By clicking on the nav bar and pokemon team option, players can add pokemon of their type to the list to be battle ready.</li>
+    <li>Once the pokemon is added, the player can then add different skills to the pokemon.</li>
+    <li>The player can then click the battle now button but before they can continue they have to choose from the different battle type options such as  me vs me, play against the computer or just autoplay the battle.</li>
+    <li>The battle is recorded in the battle log.</li>
+    <li>After the battle is done, players can go back to the pokemon team page where they can heal their pokemon back to full health.</li>
+    <li>Lastly, Enjoy the game 😄😄.</li>
+  </ol>
+    <%=link_to 'Home', root_path, class: 'btn btn-primary' %>
+    <%=link_to 'Pokedex', pokedexes_path, class: 'btn btn-info' %>
+    <%=link_to 'Skill Set', skills_path, class: 'btn btn-info' %>
+    <%=link_to 'Pokemon Team', pokemons_path, class: 'btn btn-warning' %>
+    <%=link_to 'Battle Now', pokemon_battles_path, class: 'btn btn-danger' %>
+</div>

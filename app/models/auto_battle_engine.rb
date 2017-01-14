@@ -10,7 +10,6 @@ class AutoBattleEngine
 		result << validate_state?
 		result << validate_battle_type?
 		result << validate_health_point?
-
 		result.all?
 	end
 
@@ -33,15 +32,14 @@ class AutoBattleEngine
 		elsif @pokemon_battle.current_turn.odd?
 			attacker = @pokemon1.id
 		end
-
 		pokemon_attacker = Pokemon.find(attacker)
 		pickable_skills = pokemon_attacker.pokemon_skills.where("current_pp > ?", 0)
 		total_skills = pickable_skills.count
-
 		pick_number = rand(0..total_skills-1)
 		skill = pokemon_attacker.pokemon_skills[pick_number] unless pick_number == nil
 
 		if skill.nil?
+<<<<<<< HEAD:app/models/auto_battle_engine.rb
 			pokemon_battle_engine = PokemonBattleEngine.new(
 				pokemon_battle: @pokemon_battle,
 				attacker_id: pokemon_attacker.id)
@@ -50,6 +48,11 @@ class AutoBattleEngine
 				pokemon_battle: @pokemon_battle,
 				attacker_id: pokemon_attacker.id,
 				skill_id: skill.id)
+=======
+			pokemon_battle_engine = PokemonBattleEngine.new(pokemon_battle: @pokemon_battle,attacker_id: pokemon_attacker.id)
+		else
+			pokemon_battle_engine = PokemonBattleEngine.new(pokemon_battle: @pokemon_battle,attacker_id: pokemon_attacker.id,skill_id: skill.id)
+>>>>>>> master:app/models/pokemon_battle_auto_engine.rb
 		end
 
 		if pokemon_battle_engine.list_attack_validations?
@@ -82,7 +85,6 @@ class AutoBattleEngine
 		result = []
 		result << validate_pokemon1_hp
 		result << validate_pokemon2_hp
-
 		result.all?
 	end
 
@@ -101,5 +103,8 @@ class AutoBattleEngine
 			false
 		end
 	end
+<<<<<<< HEAD:app/models/auto_battle_engine.rb
 
+=======
+>>>>>>> master:app/models/pokemon_battle_auto_engine.rb
 end
