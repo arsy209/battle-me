@@ -64,6 +64,10 @@ class PokemonBattlesController < ApplicationController
 
 	private
 
+	def pokemon_battle_params
+		params.require(:pokemon_battle).permit(:pokemon1_id, :pokemon2_id, :battle_type)
+	end
+
 	def manual_attack
 		pokemon_battle_engine = PokemonBattleEngine.new(pokemon_battle: @pokemon_battle,attacker_id: params[:attacker_id],	skill_id: params[:skill_id])
 		if pokemon_battle_engine.list_attack_validations?
@@ -100,10 +104,6 @@ class PokemonBattlesController < ApplicationController
 			get_each_pokemon
 			render 'show'
 		end
-	end
-
-	def pokemon_battle_params
-		params.require(:pokemon_battle).permit(:pokemon1_id, :pokemon2_id, :battle_type)
 	end
 
 	def set_pokemon_battle_attr
