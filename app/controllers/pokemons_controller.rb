@@ -42,7 +42,7 @@ class PokemonsController < ApplicationController
     if @pokemon.update_attributes(edit_pokemon_params)
       redirect_to @pokemon
     else
-      @pokedex = Pokedex.find(@pokemon.pokedex_id)
+    @pokedex = Pokedex.find(@pokemon.pokedex_id)
       render 'edit'
     end
   end
@@ -64,11 +64,10 @@ class PokemonsController < ApplicationController
       @pokemon.pokemon_skills.each do |pokemon_skill|
       pokemon_skill.current_pp = pokemon_skill.skill_max_pp
       pokemon_skill.save
-      end
+    end
       @pokemon.save
       redirect_to @pokemon
     else
-
       flash[:danger] = "Pokemon is in battle currently, can not heal till it is done!"
       @pokemons = Pokemon.all
       render 'index'
@@ -91,7 +90,7 @@ class PokemonsController < ApplicationController
     else
       cant_be_healed << pokemon.name
     end
-  end
+    end
     flash[:danger] = "#{cant_be_healed.to_sentence} can't be healed" if cant_be_healed.count > 0
     @pokemons = Pokemon.all
     render 'index'
@@ -117,5 +116,4 @@ class PokemonsController < ApplicationController
     @pokemon.speed = pokedex.base_speed
     @pokemon.current_experience = 0
   end
-
 end

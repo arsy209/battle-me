@@ -32,6 +32,7 @@ class PokemonSkillsController < ApplicationController
 	end
 
 	private
+
 	def pokemon_skill_params
 		params.require(:pokemon_skill).permit(:skill_id)
 	end
