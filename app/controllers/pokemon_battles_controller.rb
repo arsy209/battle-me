@@ -6,11 +6,7 @@ class PokemonBattlesController < ApplicationController
 
 	def new
 		@pokemon_battle = PokemonBattle.new
-		@list_pokemons = []
-		@pokemons = Pokemon.all
-		@pokemons.each { |poke| @list_pokemons << [poke.name, poke.id] if poke.current_health_point > 0 }
-		@list_battle_types = []
-		PokemonBattle::BATTLE_TYPE.each { |type| @list_battle_types << [type, type]}
+		new_pokemon_battle
 	end
 
 	def create
@@ -52,9 +48,7 @@ class PokemonBattlesController < ApplicationController
 
 	def auto_battle
 		@pokemon_battle = PokemonBattle.find(params[:pokemon_battle_id])
-		pokemon_battle_auto_engine = AutoBattleEngine.new(pokemon_battle: @pokemon_battle)
-		pokemon_battle_auto_engine.begin_auto_battle
-		redirect_to @pokemon_battle
+		pokemon_auto_engine
 	end
 
 	def surrender
@@ -116,5 +110,19 @@ class PokemonBattlesController < ApplicationController
 	def get_each_pokemon
 		@pokemon1 = Pokemon.find(@pokemon_battle.pokemon1_id)
 		@pokemon2 = Pokemon.find(@pokemon_battle.pokemon2_id)
+	end
+
+	def new_pokemon_battle
+		@list_pokemons = []
+		@pokemons = Pokemon.all
+		@pokemons.each { |poke| @list_pokemons << [poke.name, poke.id] if poke.current_health_point > 0 }
+		@list_battle_types = []
+		PokemonBattle::BATTLE_TYPE.each { |type| @list_battle_types << [type, type]}
+	end
+
+	def pokemon_auto_engine
+		auto_engine = AutoBattleEngine.new(pokemon_battle: @pokemon_battle)
+		auto_engine.begin_auto_battle
+		redirect_to @pokemon_battle
 	end
 end
