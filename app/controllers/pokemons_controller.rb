@@ -76,24 +76,7 @@ class PokemonsController < ApplicationController
 
   def heal_all
     @pokemons = Pokemon.all
-    cant_be_healed = []
-    @pokemons.each do |pokemon|
-    flag = true
-    result = pokemon.pokemon_battles1.where(state: 'Ongoing') + pokemon.pokemon_battles2.where(state: 'Ongoing')
-    if result.blank?
-      pokemon.current_health_point = pokemon.max_health_point
-      pokemon.pokemon_skills.each do |pokemon_skill|
-      pokemon_skill.current_pp = pokemon_skill.skill_max_pp
-      pokemon_skill.save
-      end
-      pokemon.save
-    else
-      cant_be_healed << pokemon.name
-    end
-    end
-    flash[:danger] = "#{cant_be_healed.to_sentence} can't be healed" if cant_be_healed.count > 0
-    @pokemons = Pokemon.all
-    render 'index'
+    heal_all_pokemon
   end
 
   private
@@ -115,5 +98,26 @@ class PokemonsController < ApplicationController
     @pokemon.defence = pokedex.base_defence
     @pokemon.speed = pokedex.base_speed
     @pokemon.current_experience = 0
+  end
+
+  def heal_all_pokemon
+    cant_be_healed = []
+    @pokemons.each do |pokemon|
+    flag = true
+    result = pokemon.pokemon_battles1.where(state: 'Ongoing') + pokemon.pokemon_battles2.where(state: 'Ongoing')
+    if result.blank?
+      pokemon.current_health_point = pokemon.max_health_point
+      pokemon.pokemon_skills.each do |pokemon_skill|
+      pokemon_skill.current_pp = pokemon_skill.skill_max_pp
+      pokemon_skill.save
+      end
+      pokemon.save
+    else
+      cant_be_healed << pokemon.name
+    end
+    end
+    flash[:danger] = "#{cant_be_healed.to_sentence} can't be healed" if cant_be_healed.count > 0
+    @pokemons = Pokemon.all
+    render 'index'
   end
 end

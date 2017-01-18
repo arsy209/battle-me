@@ -37,9 +37,8 @@ class SkillsController < ApplicationController
 
 	def destroy
 		@skill = Skill.find(params[:id])
-		name = @skill.name
 		@skill.destroy
-		flash[:notice] = "The skill #{name} was removed."
+		flash[:notice] = "The skill #{@skill.name} was destroyed."
 		redirect_to skills_path
 	end
 

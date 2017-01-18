@@ -16,10 +16,7 @@ class PokemonSkillsController < ApplicationController
 		if @pokemon_skill.save
 			redirect_to @pokemon
 		else
-			@pokemon = @pokemon_skill.pokemon
-			@pokemon_skills = @pokemon.pokemon_skills
-			@pokedex = Pokedex.find(@pokemon.pokedex_id)
-			@list_names_ids = Skill.all.map { |sk| [sk.name, sk.id] }
+			default
 			render 'pokemons/show'
 		end
 	end
@@ -44,5 +41,12 @@ class PokemonSkillsController < ApplicationController
 
 	def get_pokemon
 		@pokemon = Pokemon.find(params[:pokemon_id])
+	end
+
+	def default
+		@pokemon = @pokemon_skill.pokemon
+		@pokemon_skills = @pokemon.pokemon_skills
+		@pokedex = Pokedex.find(@pokemon.pokedex_id)
+		@list_names_ids = Skill.all.map { |sk| [sk.name, sk.id] }
 	end
 end
