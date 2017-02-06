@@ -1,35 +1,45 @@
-<div class="container show-pokemon">
-	<div class="col-sm-3">
-		<%= image_tag @pokedex.image_url, size: "250x250" %>
-	<table class="table table-inverse back">
-		<tr>
-			<td class="bg-primary">#</td>
-			<td class="bg-danger"><%= @pokedex.id %></td>
-		</tr>
-		<tr>
-			<td class="bg-primary">Name</td>
-			<td class="bg-danger"><%= @pokedex.name %></td>
-		</tr>
-		<tr>
-			<td class="bg-primary">Health Point</td>
-			<td class="bg-danger"><%= @pokedex.base_health_point %></td>
-		</tr>
-		<tr>
-			<td class="bg-primary">Attack</td>
-			<td class="bg-danger"><%= @pokedex.base_attack %></td>
-		</tr>
-		<tr>
-			<td class="bg-primary">Defence</td>
-			<td class="bg-danger"><%= @pokedex.base_defence %></td>
-		</tr>
-		<tr>
-			<td class="bg-primary">Speed</td>
-			<td class="bg-danger"><%= @pokedex.base_speed %></td>
-		</tr>
-		<tr>
-			<td class="bg-primary">Element Type</td>
-			<td class="bg-danger"><%= @pokedex.element_type %></td>
-		</tr>
-	</table>
+<section id="plans">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 text-center">
+				<div class="panel panel-danger panel-pricing">
+					<div class="panel-heading">
+						<%= image_tag @pokedex.image_url, size: "250x250" %>
+					</div>
+					<div class="panel-body text-center">
+						<p><strong><%= @pokedex.name %></strong></p>
+					</div>
+					<table class="table table-inverse back">
+						<tr>
+							<td class="bg-primary">#</td>
+							<td class="bg-danger"><%= @pokedex.id %></td>
+						</tr>
+						<tr>
+							<td class="bg-primary">Health Point</td>
+							<td class="bg-danger"><%= @pokedex.base_health_point %></td>
+						</tr>
+						<tr>
+							<td class="bg-primary">Attack</td>
+							<td class="bg-danger"><%= @pokedex.base_attack %></td>
+						</tr>
+						<tr>
+							<td class="bg-primary">Defence</td>
+							<td class="bg-danger"><%= @pokedex.base_defence %></td>
+						</tr>
+						<tr>
+							<td class="bg-primary">Speed</td>
+							<td class="bg-danger"><%= @pokedex.base_speed %></td>
+						</tr>
+						<tr>
+							<td class="bg-primary">Element Type</td>
+							<td class="bg-danger"><%= @pokedex.element_type %></td>
+						</tr>
+					</table>
+					<div class="panel-footer">
+						<a class="btn btn-lg btn-block btn-danger" href="/pokedexes">Back To Pokedex</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
+</section>
