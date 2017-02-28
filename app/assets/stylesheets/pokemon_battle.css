@@ -30,22 +30,22 @@ margin-top: 600px;
    border-radius: 0 25px 25px 0;
    text-align: right;
    padding-bottom: 50px;
-   background-color: #428bca;
+   background-color: #215799;
 }
 #pokemon2 table{
    text-align: center;
-   background-color: #d9534f;
+   background-color: #992321;
    color: white;
 }
 #pokemon1{
    border-radius: 25px 0 0 25px;
    text-align: left;
-   padding-bottom: 50px;
-   background-color: #d9534f;
+   padding-bottom: 70px;
+   background-color: #992321;
 }
 #pokemon1 table{
    text-align: center;
-   background-color: #428bca;
+   background-color: #215799;
    color: white;
 }
 .red {
