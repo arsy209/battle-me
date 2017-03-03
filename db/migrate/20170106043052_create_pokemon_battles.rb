@@ -11,8 +11,8 @@ class CreatePokemonBattles < ActiveRecord::Migration[5.0]
       t.integer :pokemon1_max_health_point
       t.integer :pokemon2_max_health_point
       t.string :battle_type
-      
-      t.timestamps
+
+      t.timestamps null: false
     end
   end
 end

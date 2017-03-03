@@ -10,8 +10,8 @@ class CreatePokemons < ActiveRecord::Migration[5.0]
       t.integer :defence
       t.integer :speed
       t.integer :current_experience
-      
-      t.timestamps
+
+      t.timestamps null: false
     end
   end
 end

@@ -10,7 +10,8 @@ class CreatePokemonBattleLog < ActiveRecord::Migration[5.0]
       t.integer :defender_id
       t.integer :defender_current_health_point
       t.string :action_type
-      t.timestamps
+
+      t.timestamps null: false
     end
   end
 end

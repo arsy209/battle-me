@@ -5,7 +5,7 @@ class CreatePokemonSkills < ActiveRecord::Migration[5.0]
       t.integer :pokemon_id
       t.integer :current_pp
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
