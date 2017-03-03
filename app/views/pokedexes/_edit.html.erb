@@ -36,6 +36,5 @@
     <%= (content_tag(:div, @pokedex.errors.full_messages_for(:image_url).to_sentence , class: 'alert alert-danger', role: 'alert')) if @pokedex.errors.include?(:image_url) %>
 
     <%= f.submit "Add Pokedex", class: "btn btn-primary form-group" %>
-
   <% end %>
 </div>

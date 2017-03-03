@@ -1,0 +1,22 @@
+<%= form_for @pokemon_battle do |f| %>
+	<div class="col-sm-5 red">
+		<%= f.label 'Choose the first Pokemon', for: 'pokemon1_id' %>
+		<%= f.select(:pokemon1_id, @list_pokemons, {}, {class: 'form-control form-group'}) %>
+		<%= (content_tag(:div, @pokemon_battle.errors.full_messages_for(:pokemon1_id).to_sentence , class: 'alert alert-danger', role: 'alert')) if @pokemon_battle.errors.include?(:pokemon1_id) %>
+	</div>
+	<div class="col-sm-2">
+		<div id= "vs">
+			<%= image_tag 'vs.jpg', size: "100x100"%>
+		<h5>Choose your Pokemon and Battle type</h5>
+		</div>
+			<%= f.select(:battle_type, @list_battle_types, {}, {class: 'form-control form-group'})%>
+			<%= f.submit 'Battle!', class: 'btn btn-primary'%>
+			<%= link_to 'New Pokemon Team Member', new_pokemon_path, class: "btn btn-primary"%></li>
+	</div>
+
+	<div class="col-sm-5 blue">
+		<%= f.label 'Choose the second Pokemon', for: 'pokemon2_id' %>
+		<%= f.select(:pokemon2_id, @list_pokemons, {}, {class: 'form-control form-group'}) %>
+		<%= (content_tag(:div, @pokemon_battle.errors.full_messages_for(:pokemon2_id).to_sentence , class: 'alert alert-danger', role: 'alert')) if @pokemon_battle.errors.include?(:pokemon2_id) %>
+	</div>
+<% end %>
