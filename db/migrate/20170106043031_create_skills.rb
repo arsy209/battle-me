@@ -5,8 +5,8 @@ class CreateSkills < ActiveRecord::Migration[5.0]
       t.integer :power
       t.integer :max_pp
       t.string :element_type
-      
-      t.timestamps
+
+      t.timestamps null: false
     end
   end
 end

@@ -9,7 +9,7 @@ class CreatePokedexes < ActiveRecord::Migration[5.0]
       t.string :element_type
       t.string :image_url
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
