@@ -11,40 +11,32 @@
     <%= javascript_include_tag 'application' %>
   </head>
   <body>
-    <div >
-    <div class="container">
+    <div>
       <div class="container">
-      <nav>
-      <div class="navigation">
-        <ul>
-          <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'Pokedex', pokedexes_path %></li>
-          <li><%= link_to 'Skill Set', skills_path %></li>
-          <li><%= link_to 'Pokemon Team', pokemons_path %></li>
-          <li><%= link_to 'Battle Now', pokemon_battles_path %></li>
-          <li><%= link_to 'About/Instructions', about_path %></li>
-        </ul>
+        <div class="container">
+          <nav>
+            <div class="navigation">
+              <ul>
+                <li><%= link_to 'Home', root_path %></li>
+                <li><%= link_to 'Pokedex', pokedexes_path %></li>
+                <li><%= link_to 'Skill Set', skills_path %></li>
+                <li><%= link_to 'Pokemon Team', pokemons_path %></li>
+                <li><%= link_to 'Battle Now', pokemon_battles_path %></li>
+                <li><%= link_to 'About/Instructions', about_path %></li>
+              </ul>
+            </div>
+            <div class="nav_bg">
+              <div class="nav_bar">
+                <span class="expand ">
+                  <span class="plus"><a href="#"><img src="https://lh6.ggpht.com/YphYdqVDuLK4ZY-tCpdCdl3ZbES-hXfozgfamNQcYXmLZKLTA86Xe_2bhOCjc097fCA=w300"/ width="30" alt="pokeball"></a></span>
+                  <span class="minus"><a href="#"><img src="http://www.opajaap.nl/wordpress/wp-content/uploads/wppa/thumbs/3483.png?ver=9"  width="50"/ alt="open-pokeball"></a></span>
+                </span>
+              </div>
+            </div>
+          </nav>
+        </div>
       </div>
-      <div class="nav_bg">
-        <div class="nav_bar">
-	   	<span class="expand ">
-			<span class="plus">
-				<a href="#">
-					<img src="https://lh6.ggpht.com/YphYdqVDuLK4ZY-tCpdCdl3ZbES-hXfozgfamNQcYXmLZKLTA86Xe_2bhOCjc097fCA=w300"/ width="30" alt="pokeball">
-				</a>
-			</span>
-		 <span class="minus">
-				<a href="#">
-					<img src="http://www.opajaap.nl/wordpress/wp-content/uploads/wppa/thumbs/3483.png?ver=9"  width="50"/ alt="open-pokeball">
-				</a>
-			</span>
-		</span>
-      </div>
-	  </div>
-  </nav>
-  </div>
-  </div>
-  </div>
+    </div>
   <div class= "container">
     <%= yield %>
   </div>
