@@ -68,7 +68,6 @@ class PokemonsController < ApplicationController
       @pokemon.save
       redirect_to @pokemon
     else
-      flash[:danger] = "Pokemon is in battle currently, can not heal till it is done!"
       @pokemons = Pokemon.all
       render 'index'
     end
