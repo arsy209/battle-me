@@ -13,8 +13,7 @@ class PokemonBattle < ApplicationRecord
 	validates :pokemon1_id, presence: true
 	validates :pokemon2_id, presence: true
 	validates :pokemon1_max_health_point, presence: true,numericality: {	only_integer: true, greater_than: 0}
-	validates :pokemon2_max_health_point, presence: true, numericality: {
-			only_integer: true, greater_than: 0}
+	validates :pokemon2_max_health_point, presence: true, numericality: { only_integer: true, greater_than: 0}
 	validates :battle_type, presence: true, inclusion: {in: BATTLE_TYPE}
 	validates :state, presence: true, inclusion: {in: STATE}
 	validates :current_turn, presence: true, numericality: { only_integer: true, greater_than: 0}
