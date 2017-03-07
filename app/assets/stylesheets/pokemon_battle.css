@@ -3,13 +3,12 @@
 }
 
 #vs {
-  /*margin-left: 30px;*/
   display: block;
-text-align: center;
+  text-align: center;
 }
 
 #battle-log {
-margin-top: 600px;
+  margin-top: 600px;
 
 }
 #versus img{
