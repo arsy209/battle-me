@@ -3,16 +3,16 @@ require 'rails_helper'
 
 describe 'Approve Pokedex Validations' do
 	it 'Pokemon name is present' do
-		new_pokemon = ::Pokedex.new
-		new_pokemon.name = ""
-		new_pokemon.base_health_point = 1
-		new_pokemon.base_attack = 1
-		new_pokemon.base_defence = 1
-		new_pokemon.base_speed = 1
-		new_pokemon.element_type = "fire"
-		new_pokemon.image_url = "new_pokemon.jpg"
-		expect(new_pokemon.save).to eq(false)
-		expect(new_pokemon.errors.include?(:name)).to eq(true)
+	  new_pokemon = ::Pokedex.new
+	  new_pokemon.name = ""
+	  new_pokemon.base_health_point = 1
+	  new_pokemon.base_attack = 1
+	  new_pokemon.base_defence = 1
+	  new_pokemon.base_speed = 1
+	  new_pokemon.element_type = "fire"
+	  new_pokemon.image_url = "new_pokemon.jpg"
+	  expect(new_pokemon.save).to eq(false)
+	  expect(new_pokemon.errors.include?(:name)).to eq(true)
 	end
 
 	it 'Pokemon Name must me unique.' do
@@ -40,7 +40,7 @@ describe 'Approve Pokedex Validations' do
 
 	it 'Pokemon name must not pass the 45 limit name length' do
 		first_pokemon = ::Pokedex.new
-		first_pokemon.name = "base_health_pointbase_health_pointbase_health_pointbase_health_pointbase_health_pointbase_health_point"
+		first_pokemon.name =                      "base_health_pointbase_health_pointbase_health_pointbase_health_pointbase_health_pointbase_health_point"
 		first_pokemon.base_health_point = 10
 		first_pokemon.base_attack = 10
 		first_pokemon.base_defence = 10
