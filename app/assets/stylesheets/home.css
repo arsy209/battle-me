@@ -4,13 +4,13 @@ body {
 }
 
 .logo {
-  margin-left: 260px;
+  margin-left: 240px;
   padding: auto;
 }
 
 .search {
   margin-top: 300px;
-  margin-left: 350px;
+  margin-left: 330px;
   padding: auto;
   margin-bottom: 10px;
 }
@@ -21,5 +21,26 @@ body {
 }
 
 #valid {
-  margin-left: 420px;
+  margin-left: 400px;
+}
+
+
+@media only screen and (max-width: 988px) {
+
+  .logo {
+    margin-left: 90px;
+    padding: auto;
+  }
+
+  #valid {
+    margin-left: 230px;
+  }
+
+  .search {
+    margin-top: 300px;
+    margin-left: 180px;
+    padding: auto;
+    margin-bottom: 10px;
+  }
+
 }
