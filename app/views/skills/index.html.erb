@@ -1,10 +1,25 @@
 <div class="container">
+
 	<div class="col-sm-12">
 		<div class="button">
-		<%= link_to 'Create New Skill', new_skill_path, class: 'btn btn-primary' %>
+		<!-- <%= link_to 'Create New Skill', new_skill_path, class: 'btn btn-primary' %> -->
 	 </div>
-		<br />
-		<br />
+	 <button type="button" class="btn btn-primary butt-pad" data-toggle="modal" data-target="#ordine">New Skill</button>
+	 <!-- Modal -->
+	 <div id="ordine" class="modal fade " role="dialog">
+		 <div class="modal-dialog">
+			 <!-- Modal content-->
+			 <div class="modal-content modal-new ">
+				 <div class="modal-header">
+					 <button type="button" class="close" data-dismiss="modal">×</button>
+					 <h4 class="modal-title">New Skill</h4>
+				 </div>
+				 <div class="modal-body ">
+				 <%= render partial: "skills/form" %>
+				 </div>
+			 </div>
+		 </div>
+	 </div>
 		<table class="table table-inverse back">
 			<thead>
 				<tr class="bg-primary">

@@ -1,9 +1,24 @@
 <div class="container ">
   <div class="col-sm-12">
     <div class="button">
-      <%= link_to 'Add New Pokemon', new_pokedex_path, class: "btn btn-primary"%>
+      <!-- <%= link_to 'Add New Pokemon', new_pokedex_path, class: "btn btn-primary"%> -->
     </div>
-  	<br /><br />
+      <button type="button" class="btn btn-primary butt-pad" data-toggle="modal" data-target="#ordine">New Pokemon</button>
+      <!-- Modal -->
+      <div id="ordine" class="modal fade " role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content modal-new ">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">×</button>
+              <h4 class="modal-title">New Pokemon</h4>
+            </div>
+            <div class="modal-body ">
+            <%= render partial: "pokedexes/form" %>
+            </div>
+          </div>
+        </div>
+      </div>
   	<table class="table table-inverse back">
   		<thead>
   		  <tr class="bg-primary">

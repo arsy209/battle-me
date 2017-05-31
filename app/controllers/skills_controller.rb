@@ -2,6 +2,7 @@ class SkillsController < ApplicationController
 
 	def index
 		@skills = Skill.paginate(page: params[:page], per_page: 70)
+		@skill = Skill.new
 	end
 
 	def new
