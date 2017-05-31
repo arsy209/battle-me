@@ -2,6 +2,7 @@ class PokedexesController < ApplicationController
 
 	def index
 	  @pokedexes = Pokedex.paginate(page: params[:page], per_page: 50)
+		@pokedex = Pokedex.new
 	end
 
 	def new
