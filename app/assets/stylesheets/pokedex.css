@@ -35,6 +35,9 @@
   margin: 0px;
 }
 
+.center-now {
+  text-align: center;
+}
 
 .modal-new {
   color: darkgreen;
