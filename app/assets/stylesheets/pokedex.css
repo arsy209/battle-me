@@ -40,12 +40,12 @@
 }
 
 .modal-new {
-  color: darkgreen;
+  color: navy;
   font-family:"Helvetica";
   margin-bottom: 25px;
   font-size: 15px;
   padding: 20px;
-  background-color: #F9FFFA ;
+  background-color: #E1F3FF  ;
   margin-bottom: 60px;
   margin-top: 80px;
   border-style: outset;
