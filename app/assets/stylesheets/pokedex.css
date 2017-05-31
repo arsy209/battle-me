@@ -34,3 +34,9 @@
   padding: 20px;
   margin: 0px;
 }
+
+
+.modal-new {
+  padding: 70px;
+  background-color: lightblue;
+}
