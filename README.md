@@ -5,7 +5,7 @@
 ### Website: [Battle-Me](https://battle-me.herokuapp.com)
 
 
-![Alt text](/homepage.png "Optional Title")
+![alt text](/homepage.png "Description goes here")
 A Pokemon game where users can search the database for Pokemon by element type.
 New Pokemon can also be added to the pokedex, they can also be edited and deleted. Users can also view the different types of skills and have the same option of adding new, editing or deleting skills.
 Users can then also add their pokemon to a new list where they can battle.
