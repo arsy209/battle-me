@@ -1,5 +1,5 @@
-name,power,max_pp,element_type
-pound,40,35,normal
+name,power,max_pp,element_type,red,blue
+pound,40,35,normal,5,6
 karate-chop,50,25,fighting
 double-slap,15,10,normal
 comet-punch,18,15,normal
